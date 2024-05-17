@@ -52,14 +52,14 @@
             <table>
                 <tr>
                     <td>Nimi:</td>
-                    <td><input type="text" maxlength="20" name="nimi" placeholder="Teie eesnimi"></td>
+                    <td><input type="text" maxlength="20" name="nimi" placeholder="Teie eesnimi" required></td>
                 </tr>
                 <tr>
                     <td>Vali Teenus:</td>
                     <td>
-                    <input type="radio" name="10">Ühe ruumi puhastus(10eur) <br>
-                    <input type="radio" name="100">Korteri puhastus(100eur)<br>
-                    <input type="radio" name="1000">Maja puhastus(100eur)<br>
+                    <input type="radio" name="teenus" value="10">Ühe ruumi puhastus(10eur) <br>
+                    <input type="radio" name="teenus"value="50">Korteri puhastus(50eur)<br>
+                    <input type="radio" name="teenus"value="100">Maja puhastus(100eur)<br>
                     </td>
                 </tr>
                 <tr>
@@ -75,22 +75,25 @@
                 
                 <tr>
                     <td>Nõustun tingimustega:</td>
-                    <td><input type="checkbox" name="N"></td>
-                </tr>
-                <tr>
-                    <td>Ruumide kirjeldus:</td>
-                    <td>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </td>
-                </tr>
-                <tr>
+                    <td><input type="checkbox" name="N" required></td></tr>
+                <tr> <!-- nupud-->
                     <td><input type="reset" value="Tühjenda väljad"></td>
-                    <td>
-                        <input type="submit" value="Saada">
-                    </td>
+                    <td><input type="submit" value="Arvuta"></td>
                 </tr>
             </table>
         </form>
+        <?php
+          if ((!empty($_GET["nimi"])) && (!empty($_GET["teenus"]) && (!empty($_GET["aste"])))) {
+
+            $nimi = $_GET['nimi'];
+            $teenus = $_GET['teenus'];
+            $aste = $_GET['aste'];
+    }
+    elseif ((!empty($_GET["nimi"])) && (empty($_GET["teenus"]))) {
+      echo "Palun vali ka Teenus";
+    }
+       
+    ?>
         </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
