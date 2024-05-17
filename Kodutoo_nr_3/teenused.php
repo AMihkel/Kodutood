@@ -52,7 +52,7 @@
             <table>
                 <tr>
                     <td>Nimi:</td>
-                    <td><input type="text" maxlength="20" name="nimi" placeholder="Teie eesnimi" required></td>
+                    <td><input type="text" maxlength="20" name="nimi" pattern="[A-Za-züõöä]+" placeholder="Teie eesnimi" required></td><!--pattern="[A-Za-züõöä]+" only letters are acceptable  -->
                 </tr>
                 <tr>
                     <td>Vali Teenus:</td>
@@ -76,8 +76,8 @@
                 <tr>
                     <td>Nõustun tingimustega:</td>
                     <td><input type="checkbox" name="N" required></td></tr>
-                <tr> <!-- nupud-->
-                    <td><input type="reset" value="Tühjenda väljad"></td>
+                <tr> <!-- buttons-->
+                    <td><a class="btn btn-warning" href="teenused.php" role="button">Alusta uuesti</a></td>
                     <td><input type="submit" value="Arvuta"></td>
                 </tr>
             </table>
@@ -104,9 +104,10 @@
     }
     elseif ((isset($_GET["nimi"])) && (empty($_GET["teenus"]))) {
       ?>
+      <br>
       <div class=" bg-danger text-center">
-  Palun vali mis teenust soovid!!
-</div>
+           <h2>Palun vali mis teenust soovid!!</h2>
+      </div>
       <?php
     }
        
