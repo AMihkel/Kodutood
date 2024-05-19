@@ -43,13 +43,13 @@
               
             </ul>
           </div>
-</div>
       </nav>
         </div>
+</div>
       <!-- main content-->
       <div class="container">
         <h1>Teenused</h1>
-        <form action="" method="GET">
+        <form  method="GET">
             <table>
                 <tr>
                     <td>Nimi:</td>
@@ -59,14 +59,14 @@
                     <td>Vali Teenus:</td>
                     <td>
                     <input type="radio" name="teenus" value="10">Ühe ruumi puhastus(10eur) <br>
-                    <input type="radio" name="teenus"value="50">Korteri puhastus(50eur)<br>
-                    <input type="radio" name="teenus"value="100">Maja puhastus(100eur)<br>
+                    <input type="radio" name="teenus" value="50">Korteri puhastus(50eur)<br>
+                    <input type="radio" name="teenus" value="100">Maja puhastus(100eur)<br>
                     </td>
                 </tr>
                 <tr>
                     <td>Vali teenuse aste :</td>
                     <td>
-                        <select name="aste" id="">
+                        <select name="aste">
                         <option value="1">Üldine(Teenuse hind*1)</option>
                         <option value="5">Koos pesuga(Teenuse hind*5)</option>
                         <option value="10">Detailne(Teenuse hind*10)</option>
