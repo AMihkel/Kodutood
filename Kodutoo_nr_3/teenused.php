@@ -43,6 +43,7 @@
               
             </ul>
           </div>
+</div>
       </nav>
         </div>
       <!-- main content-->
