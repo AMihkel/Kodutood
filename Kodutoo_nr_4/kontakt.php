@@ -1,6 +1,7 @@
 <?php
 $oskused= array('HTML','CSS','Bootstrap','PHP'); //php massiiv oskused
 $klassid= array("primary", "secondary", "success", "danger", "warning", "info", "dark"); // php massiiv värviklassid
+
 ?>
 
 <!doctype html>
@@ -34,7 +35,7 @@ $klassid= array("primary", "secondary", "success", "danger", "warning", "info", 
           <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Avaleht</a>
+                <a class="nav-link" href="index.html">Avaleht</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Tooted</a>
@@ -73,10 +74,28 @@ $klassid= array("primary", "secondary", "success", "danger", "warning", "info", 
 
     <!-- Meie töötajad -->
     <div class="container">
+    <h1 class=" text-center strong">Meie töötajad</h1>
+    <div class="row">
+            <?php
 
+             $kataloog = 'tootajad';
+             $asukoht=opendir($kataloog);
+             while($rida = readdir($asukoht)){
 
+                  if($rida!='.' && $rida!='..'){
+                    $nimi= pathinfo($rida, PATHINFO_FILENAME);
+                    ?>
+                          <div class="col">
+                            <div class="row"><img src="./tootajad/<?php echo $rida; ?>" alt=""></div>
+                            <div class="row"><p class="text-center text-capitalize fs-4"><?php echo $nimi; ?></p></div>
+                            <div class="row"><p class="text-center"><?php echo $nimi; ?>@suvamail.ee</p></div>
+                        </div>
+                        <?php
+                  }
+             }
+            ?>
     </div>
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
