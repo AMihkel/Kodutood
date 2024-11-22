@@ -18,6 +18,11 @@
             
             //vastused
             ?>
+            <!-- var_dump enne tabelit -->
+            <?php 
+              var_dump($paring1);
+              echo "<br>";
+            ?>
             <!-- Vali kÃµikide seadmete nimed, IP-aadressid ja asukoht ning kuva 10 esimest -->
             <div class="container-fluid">
             <caption><strong>IP aadressid ja asukohad</strong></caption>
@@ -47,6 +52,11 @@
             </tbody>
               </table>
             </div>
+            <!-- var_dump enne tabelit -->
+            <?php 
+              var_dump($paring2);
+              echo "<br>";
+            ?>
             <!-- Kuva kolm kÃµige vanemat seadet -->
             <div class="container-fluid">
             <caption><strong>Kõige vanemad masinad</strong></caption>
@@ -74,7 +84,11 @@
             ?> 
             </tbody>
               </table>
-
+              <!-- var_dump enne tabelit -->
+            <?php 
+              var_dump($paring3);
+              echo "<br>";
+            ?>
               <!-- Kuva kÃµikide seadmete arv, mis on praegu hoolduses -->
               <?php 
               $valjund = mysqli_query($yhendus, $paring3);
@@ -85,6 +99,12 @@
                 echo "Hetkel on " . $nr . " seadet paranduses";
             }
               ?>
+              <!-- var_dump enne tabelit -->
+            <?php 
+              echo "<br>";
+              var_dump($paring4);
+              echo "<br>";
+            ?>
             <!-- Leia, mitu seadet on igas asukohas, panin limiidiks 15 -->
             <div class="container-fluid">
             <caption><strong>Mitu seadet on asukohas</strong></caption>
@@ -116,6 +136,7 @@
               
             </div>
 </div>
+
         
 
 <?php include("footer.php"); ?>
